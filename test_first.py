@@ -1,9 +1,13 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
 
 def test_menu_item():
-    driver = webdriver.Chrome(executable_path='/Users/dmitr/PycharmProjects/tms_aqa_python_pytest/chromedriver.exe')
+    options = Options()
+    options.headless = True
+    driver = webdriver.Chrome(options=options, executable_path='/Users/dmitr/PycharmProjects/tms_aqa_python_pytest/chromedriver.exe')
     driver.get('https://spb.minfin.gov.by/')
     driver.fullscreen_window()
 
